@@ -1,4 +1,4 @@
-# express-pack
+# vue-template
 Node app template that uses webpack configured for separate frontend and backend bundles.
 - *Webpack* configured to build separate frontend and backend bundles
 - *webpack-dev-middleware* and *webpack-hot-middleware* for hot module reloading
