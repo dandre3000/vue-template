@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const { merge } = require('webpack-merge')
 const base = require('./webpack.base.js')
 
@@ -17,6 +18,10 @@ let config = {
 	module: {
 		rules: [
 			{
+				test: /\.vue$/,
+				loader: 'vue-loader'
+			},
+			{
 				test: /\.css$/i,
 				use: [MiniCssExtractPlugin.loader, 'css-loader']
 			},
@@ -26,6 +31,7 @@ let config = {
 					{
 						loader: 'file-loader',
 						options: {
+							esModule: false,
 							name: '[name].[ext]',
 							outputPath: 'assets/images/'
 						}
@@ -43,7 +49,7 @@ let config = {
 		new HtmlWebpackPlugin({
 			inject: 'head',
 			template: './src/templates/index.html',
-			filename: 'index.html',
+			filename: 'templates/index.html',
 			minify: {
 				removeComments: true,
 				collapseWhitespace: true
@@ -65,6 +71,7 @@ if (process.env.NODE_ENV === 'development') {
 			hotUpdateMainFilename: '.hot/hot-update.json',
 		},
 		plugins: [
+			new VueLoaderPlugin(),
 			new webpack.HotModuleReplacementPlugin()
 		]
 	})
