@@ -10,7 +10,7 @@ module.exports = merge(base, {
 		__filename: false,
 	},
 	externals: [nodeExternals()],
-	entry: process.env.NODE_ENV === 'development'? './src/dev-server.js' : './src/server.js', // ./src/index.js
+	entry: './src/server-entry.js', // ./src/index.js
 	output: {
 		filename: 'server.bundle.js' // main.js
 	}
