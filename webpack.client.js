@@ -45,6 +45,7 @@ let config = {
 		]
 	},
 	plugins: [
+		new VueLoaderPlugin(),
 		new MiniCssExtractPlugin(),
 		new HtmlWebpackPlugin({
 			inject: 'head',
@@ -71,7 +72,6 @@ if (process.env.NODE_ENV === 'development') {
 			hotUpdateMainFilename: '.hot/hot-update.json',
 		},
 		plugins: [
-			new VueLoaderPlugin(),
 			new webpack.HotModuleReplacementPlugin()
 		]
 	})
