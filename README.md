@@ -1,8 +1,9 @@
 # vue-template
-Node app template that uses webpack configured for separate frontend and backend bundles.
+Vue web app template.
 - *Webpack* configured to build separate frontend and backend bundles
 - *webpack-dev-middleware* and *webpack-hot-middleware* for hot module reloading
 - *Node.js* backend with *Express* server
+- *Vue.js* gui framework
 - *Babel* compiler
 - *ESLint* linter
 ## Installation
