@@ -7,7 +7,7 @@ const compiler = webpack(config)
 module.exports = server => {
 	// routing must be above webpack-dev-middleware & webpack-hot-middleware
 	server.all('/', function (req, res) {
-		let data = compiler.outputFileSystem.readFileSync(path.join(compiler.outputPath,'/templates/index.html'), 'utf8')
+		let data = compiler.outputFileSystem.readFileSync(path.join(compiler.outputPath, '/templates/index.html'), 'utf8')
 		
 		res.set('content-type','text/html')
 		res.send(data.replace('ssr', 'DeAundre Payne'))
