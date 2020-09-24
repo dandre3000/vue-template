@@ -37,10 +37,6 @@ let config = {
 						}
 					},
 				],
-			},
-			{
-				test: /\.html$/i,
-				loader: 'html-loader',
 			}
 		]
 	},
